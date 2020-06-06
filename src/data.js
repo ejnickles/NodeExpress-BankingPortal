@@ -11,9 +11,10 @@ const userData = fs.readFileSync(
 );
 const users = JSON.parse( userData );
 
-const writeJSON = act => {
+const writeJSON = () => {
+  const accountsJSON = JSON.stringify(accounts);
   fs.writeFileSync(
-    path.join( __dirname, 'json', 'accounts.json' ), act, 'utf8'
+    path.join( __dirname, 'json', 'accounts.json' ), accountsJSON, 'utf8'
   );
 }
 
